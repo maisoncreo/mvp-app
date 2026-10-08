@@ -1,5 +1,3 @@
-"use client"
-
 import {
   Collapsible,
   CollapsibleContent,
@@ -37,15 +35,8 @@ export function NavMain({
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
-          <Collapsible
-            key={item.title}
-            defaultOpen={item.isActive}
-            render={<SidebarMenuItem />}
-          >
-            <SidebarMenuButton
-              tooltip={item.title}
-              render={<a href={item.url} />}
-            >
+          <Collapsible key={item.title} defaultOpen={item.isActive} render={<SidebarMenuItem />}>
+            <SidebarMenuButton tooltip={item.title} render={<a href={item.url} />}>
               {item.icon}
               <span>{item.title}</span>
             </SidebarMenuButton>
@@ -53,11 +44,10 @@ export function NavMain({
               <>
                 <CollapsibleTrigger
                   render={
-                    <SidebarMenuAction className="aria-expanded:rotate-90" />
+                    <SidebarMenuAction className="data-open:rotate-90" />
                   }
                 >
-                  <ChevronRightIcon
-                  />
+                  <ChevronRightIcon />
                   <span className="sr-only">Toggle</span>
                 </CollapsibleTrigger>
                 <CollapsibleContent>

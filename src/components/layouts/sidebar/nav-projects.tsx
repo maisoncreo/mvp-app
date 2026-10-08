@@ -1,4 +1,3 @@
-"use client"
 
 import {
   DropdownMenu,
@@ -28,6 +27,7 @@ export function NavProjects({
   }[]
 }) {
   const { isMobile } = useSidebar()
+
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
@@ -47,8 +47,7 @@ export function NavProjects({
                   />
                 }
               >
-                <MoreHorizontalIcon
-                />
+                <MoreHorizontalIcon />
                 <span className="sr-only">More</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent
